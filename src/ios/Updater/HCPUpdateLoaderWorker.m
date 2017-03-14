@@ -84,7 +84,7 @@
         }
         
         // check if new version is available
-        if ([newAppConfig.contentConfig.releaseVersion isEqualToString:_oldAppConfig.contentConfig.releaseVersion]) {
+        if (([newAppConfig.contentConfig.releaseVersion compare:_oldAppConfig.contentConfig.releaseVersion])<=0) {
             [self notifyNothingToUpdate:newAppConfig];
             return;
         }
